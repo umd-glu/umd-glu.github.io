@@ -73,11 +73,13 @@ h2 {
 function sendEmail() {
     var email = 'jdallen@umd.edu, transportation@umd.edu';
     var subject = document.getElementById('subject').value;
-    var message = document.getElementById('message').value;
-    var name = document.getElementById('name').value;
+    var message = encodeURIComponent(document.getElementById('message').value);
+    var name = encodeURIComponent(document.getElementById('name').value);
 var messageLinebreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
 
     var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + messageLinebreak + '%0D%0A' + name;
+
+
 
         win = window.open(mailto_link, '_blank');
         var body = windowRef.document.getElementsByTagName('body')
@@ -111,7 +113,7 @@ With less than a month before the beginning of the Fall semester, it has come to
 
 While the DOTS website says the 127 route was canceled because the Mazza GrandMarc apartments declined to continue the partnership, this does not change the fact that the majority of students taking the 127 do not live at those apartments. The bus is almost always full of students who live on the Rhode Island Ave corridor north of University Boulevard, most of whom are lower-income graduate students who cannot afford a personal vehicle, nor afford to live closer to campus. 
 
-The other bus routes available to students living on the 127 route are non-UMD buses, which cost $2.50 per trip one way. Daily use of these buses adds up to $25/week and $100/month. Transportation fees for graduate students have gone up almost 40 percent since 2021, while at the same time there has been an almost 25 percent decrease in commuter buses available to UMD students. This includes a 16.4 percent increase for AY24-25, which was justified as necessary to avoid cutting bus routes in the fall. How can UMD justify raising transportation fees while simultaneously taking away transportation options?
+The other bus routes available to students living on the 127 route are non-UMD buses, which cost $2.50 per trip one way. Daily use of these buses adds up to $25/week and $100/month. Transportation fees for graduate students have gone up almost 40% since 2021, while at the same time there has been an almost 25% decrease in commuter buses available to UMD students. This includes a 16.4% increase for AY24-25, which was justified as necessary to avoid cutting bus routes in the fall. How can UMD justify raising transportation fees while simultaneously taking away transportation options?
  
 Students were not only promised but paid for realistic and reliable transportation options. Canceling the 127 shuttle route because the Mazza GrandMarc no longer wants to host it is an inexcusable reason and a failure on the part of DOTS to serve the numerous students who rely on the 127 shuttle. The 83 shuttle is not a replacement for the 127. Students who made housing decisions months ago based on their proximity to UMD shuttle routes, particularly the 127 shuttle, are now left without realistic, reliable, and safe transportation options.
 
@@ -128,7 +130,6 @@ Signed,
 <a onclick='sendEmail()'>
 <button class="button" id="sender">Send email!</button>
 </a>
-
 
 </form>
 
