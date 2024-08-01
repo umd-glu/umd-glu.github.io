@@ -85,6 +85,14 @@ var messageLinebreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
 
 document.getElementById('sender').addEventListener("click", sendEmail);
 
+windowRef.focus();
+
+  setTimeout(function(){
+    if(!windowRef.document.hasFocus()) {
+        windowRef.close();
+    }
+  }, 500);
+
 </script>
 
 </head>
