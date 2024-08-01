@@ -73,11 +73,13 @@ h2 {
 function sendEmail() {
     var email = 'jdallen@umd.edu, transportation@umd.edu';
     var subject = document.getElementById('subject').value;
-    var message = document.getElementById('message').value;
+    var message = encodeURIComponent(document.getElementById('message').value);
     var name = document.getElementById('name').value;
 var messageLinebreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
 
     var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + messageLinebreak + '%0D%0A' + name;
+
+
 
         win = window.open(mailto_link, '_blank');
         var body = windowRef.document.getElementsByTagName('body')
