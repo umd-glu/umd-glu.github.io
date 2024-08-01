@@ -78,7 +78,7 @@ function sendEmail() {
 var messageLinebreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
 var messagePercent = message.replace(%/g, '&#37;');
 
-    var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + messageLinebreak + messagePercent + '%0D%0A' + name;
+    var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + messageLinebreak + '%0D%0A' + name;
 
         win = window.open(mailto_link, 'emailWindow');
         if (win && win.open && !win.closed) win.close();
