@@ -71,17 +71,17 @@ h2 {
 
 <script language="javascript" type="text/javascript">
 function sendEmail() {
-    var email = ' jdallen@umd.edu, transportation@umd.edu';
+    var email = 'bill.ferguson@senate.state.md.us';
     var subject = document.getElementById('subject').value;
     var message = document.getElementById('message').value;
     var name = document.getElementById('name').value;
 var messageLinebreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
-var messagePercent = message.replace(%/g, '&#37;');
 
     var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + messageLinebreak + '%0D%0A' + name;
 
         win = window.open(mailto_link, 'emailWindow');
         if (win && win.open && !win.closed) win.close();
+    }
 
 document.getElementById('sender').addEventListener("click", sendEmail);
 
