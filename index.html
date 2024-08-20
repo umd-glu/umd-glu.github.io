@@ -71,16 +71,19 @@ h2 {
 
 <script language="javascript" type="text/javascript">
 function sendEmail() {
-    var email = 'jperman@usmd.edu';
+    var email = 'goodenlr@aol.com';
     var subject = document.getElementById('subject').value;
-    var message = document.getElementById('message').value;
-    var name = document.getElementById('name').value;
+    var message = encodeURIComponent(document.getElementById('message').value);
+    var name = encodeURIComponent(document.getElementById('name').value);
 var messageLinebreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
 
     var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + messageLinebreak + '%0D%0A' + name;
 
-        win = window.open(mailto_link, 'emailWindow');
-        if (win && win.open && !win.closed) win.close();
+
+
+        win = window.open(mailto_link, '_blank');
+        var body = windowRef.document.getElementsByTagName('body')
+        if(!body.lenth) setTimeout(windowRef.close,300)
     }
 
 document.getElementById('sender').addEventListener("click", sendEmail);
