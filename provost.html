@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tell the Provost - Recognize GLU!</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+<style>
+body {
+  background-color: linen;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #da332e;
+  text-align:center;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #de5f5f;
+  text-align:center;
+  margin: 0px;
+}
+
+
+.button{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  background-color: #f6c051;
+  border-radius: 5px;
+  border: 2px solid #f6c051;
+  padding: 10px;
+  width: 30%;
+  position: relative;
+}
+
+.user_input{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  display: block;
+  margin: 10px auto;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 2px solid #f6c051;
+  width: 80%;
+  height: 30px;
+}
+
+.user_input2{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  white-space: pre-wrap; 	
+  display: block;
+  margin: 10px auto;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 2px solid #f6c051;
+  width: 80%;
+  height: 500px;
+}
+
+</style>
+
+<script language="javascript" type="text/javascript">
+function sendEmail() {
+    var email = 'provost@umd.edu,jkr@umd.edu';
+    var subject = document.getElementById('subject').value;
+    var message = encodeURIComponent(document.getElementById('message').value);
+    var name = encodeURIComponent(document.getElementById('name').value);
+var messageLinebreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
+
+    var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + messageLinebreak + '%0D%0A' + name;
+
+
+
+        win = window.open(mailto_link, '_blank');
+        var body = windowRef.document.getElementsByTagName('body')
+        if(!body.lenth) setTimeout(windowRef.close,300)
+    }
+
+document.getElementById('sender').addEventListener("click", sendEmail);
+
+</script>
+
+</head>
+<body>
+<h1>Tell Provost Rice: Graduate Workers Deserve A Union!</h1>
+
+<p>
+You can edit and review your letter before sending it.
+</p>
+
+<form>
+<p>
+<h2>Subject:</h2><br>
+<input class="user_input" type="text" id="subject" value="Graduate Workers Deserve A Union!">
+<br>
+</p>
+
+<p>
+<h2>Message:</h2><br>
+<textarea class="user_input2" type="text" id="message" rows="4" cols="50">Dear Provost Rice,
+
+I am an undergraduate at UMD writing to express my support for the Graduate Labor Union. As an undergrad, I recognize that grads provide invaluable labor for this campus - as researchers and as teachers and mentors for over 30,000 undergrads. It is shocking that a majority of grad workers are housing insecure and a third struggle with buying food, a basic necessity. A university that prides itself on “advancing the public good”, “investing in people and communities”, and which values actions that are "guided not only by what is good for self but also by what is good for all" should be a university that allows graduate workers to have a say in their working conditions - especially since a supermajority of grad workers support unionization. I urge you to support collective bargaining rights for graduate workers and recognize the Graduate Labor Union.
+
+Respectfully,
+</textarea>
+</p>
+
+<p>
+<input class="user_input" type="text" id="name" placeholder="Your name" required/>
+</p>
+
+<a onclick='sendEmail()'>
+<button class="button" id="sender">Send email!</button>
+</a>
+
+
+</form>
+
+</body>
+</html>

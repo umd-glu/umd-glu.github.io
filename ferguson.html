@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Email Sen. Bill Ferguson</title>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat">
+
+<style>
+body {
+  background-color: linen;
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+}
+
+h1 {
+  font-family: "Montserrat", sans-serif;
+  color: #da332e;
+  text-align:center;
+}
+
+h2 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 20px;
+  color: #de5f5f;
+  text-align:center;
+  margin: 0px;
+}
+
+
+.button{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  text-align: center;
+  background-color: #f6c051;
+  border-radius: 5px;
+  border: 2px solid #f6c051;
+  padding: 10px;
+  width: 30%;
+  position: relative;
+}
+
+.user_input{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  display: block;
+  margin: 10px auto;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 2px solid #f6c051;
+  width: 80%;
+  height: 30px;
+}
+
+.user_input2{
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  white-space: pre-wrap; 	
+  display: block;
+  margin: 10px auto;
+  padding: 10px 10px;
+  border-radius: 5px;
+  border: 2px solid #f6c051;
+  width: 80%;
+  height: 500px;
+}
+
+</style>
+
+<script language="javascript" type="text/javascript">
+function sendEmail() {
+    var email = 'bill.ferguson@senate.state.md.us';
+    var subject = document.getElementById('subject').value;
+    var message = document.getElementById('message').value;
+    var name = document.getElementById('name').value;
+var messageLinebreak = message.replace(/\r\n|\r|\n/g, "%0D%0A");
+
+    var mailto_link = 'mailto:' + email + '?subject=' + subject + '&body=' + messageLinebreak + '%0D%0A' + name;
+
+        win = window.open(mailto_link, 'emailWindow');
+        if (win && win.open && !win.closed) win.close();
+    }
+
+document.getElementById('sender').addEventListener("click", sendEmail);
+
+</script>
+
+</head>
+<body>
+<h1>Tell Senator Bill Ferguson: USM Graduate Workers Deserve A Union!</h1>
+
+<p>
+You can edit and review your letter before sending it.
+</p>
+
+<form>
+<p>
+<h2>Subject:</h2><br>
+<input class="user_input" type="text" id="subject" value="USM Graduate Workers Deserve A Union - Support SB 0823!">
+<br>
+</p>
+
+<p>
+<h2>Message:</h2><br>
+<textarea class="user_input2" type="text" id="message" rows="4" cols="50">Dear Sen. Ferguson,
+
+I am a grad worker at Hopkins, a member of Teachers and Researchers United, and your constituent. Despite the claims of the University System of Maryland, graduate workers do a large amount of the work that makes universities run, and the National Labor Relations Board has already ruled that those of us at private universities have the right to collective bargaining.
+
+I am asking you to support SB 0823, which will extend collective bargaining rights to graduate workers at the University System of Maryland. Graduate workers at private universities already have this right, and many of UMD’s peer public institutions do as well. As an academic, I would like to see Maryland continue to be a center for innovation and scholarship, and I think that extending these basic rights to graduate workers in Maryland is an important part of ensuring that.
+
+Sincerely,
+</textarea>
+</p>
+
+<p>
+<input class="user_input" type="text" id="name" placeholder="Your name" required/>
+</p>
+
+<a onclick='sendEmail()'>
+<button class="button" id="sender">Send email!</button>
+</a>
+
+
+</form>
+
+</body>
+</html>
